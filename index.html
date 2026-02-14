@@ -214,38 +214,22 @@
     </div>
 
     <div class="sec-4-2">
-
-        <!-- Project 1 -->
         <div class="box3">
             <img src="qr.png" alt="">
-            <h3>Generating QR</h3>
-
+            <h3> Generating QR</h3>
             <div class="project-btns">
-                <a href="https://chsrunik.github.io/-Generating-QR/" target="_blank">
-                    <button class="btn-outline">GitHub</button>
-                </a>
-
-                <button class="btn-dark"
-                        onclick="openVideo('qr vi.mp4')">
-                    Live Demo
-                </button>
+                <a href="https://chsrunik.github.io/-Generating-QR/"><button class="btn-outline">GitHub</button></a>
+                <a href="#"><button class="btn-dark">Live Demo</button></a>
             </div>
         </div>
 
         <!-- Project 2 -->
         <div class="box3">
             <img src="game.png" alt="">
-            <h3>Tic Tac Toe</h3>
-
+            <h3>Tic Tac Toe </h3>
             <div class="project-btns">
-                <a href="https://chsrunik.github.io/Tic-Tac-Toe-Game/" target="_blank">
-                    <button class="btn-outline">GitHub</button>
-                </a>
-
-                <button class="btn-dark"
-                        onclick="openVideo('demo2.mp4')">
-                    Live Demo
-                </button>
+                <a href="https://chsrunik.github.io/Tic-Tac-Toe-Game/"><button class="btn-outline">GitHub</button></a>
+                <a href="#"><button class="btn-dark">Live Demo</button></a>
             </div>
         </div>
 
@@ -253,55 +237,76 @@
         <div class="box3">
             <img src="project3.jpg" alt="">
             <h3>Responsive Shopping</h3>
-
             <div class="project-btns">
-                <button class="btn-outline">GitHub</button>
-                <button class="btn-dark"
-                        onclick="openVideo('demo3.mp4')">
-                    Live Demo
-                </button>
+                <a href="#"><button class="btn-outline">GitHub</button></a>
+                <a href="#"><button class="btn-dark">Live Demo</button></a>
             </div>
         </div>
 
     </div>
+
 </section>
 
-<div id="videoModal" class="video-modal">
-    <div class="video-container">
-        <span class="close-btn" onclick="closeVideo()">&times;</span>
-        <video id="projectVideo" controls>
-            <source src="" type="video/mp4">
-        </video>
+<section id="contact" class="contact-section">
+
+    <p class="sub-heading">Get in Touch</p>
+    <h1 class="main-heading">Contact Me</h1>
+
+    <div class="contact-box">
+
+        <a href="mailto:chsrunik@gmail.com" class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>Mail</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/choppara-srunik-a74a0b241?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+           target="_blank"
+           class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+        </a>
+
     </div>
-</div>
+
+</section>
+
+
+<footer>
+    <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <p class="copyright">
+        copyright © 2026 Choppara Srunik. All Rights Reserved
+    </p> 
+    <a href="#home" class="arrow arrow-top">
+        <img src="arrow.png" alt="">
+    </a>
+    
+</footer>
+
+<script src="script.js"></script>
 
 <script>
-function openVideo(videoSrc) {
-    const modal = document.getElementById("videoModal");
-    const video = document.getElementById("projectVideo");
-
-    video.src = videoSrc;
-    modal.style.display = "flex";
-    video.play();
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
 }
 
-function closeVideo() {
-    const modal = document.getElementById("videoModal");
-    const video = document.getElementById("projectVideo");
-
-    modal.style.display = "none";
-    video.pause();
-    video.currentTime = 0;
-}
-
-window.onclick = function(event) {
-    const modal = document.getElementById("videoModal");
-    if (event.target === modal) {
-        closeVideo();
-    }
-}
+window.addEventListener('load', function () {
+  window.scrollTo(0, 0);
+});
 </script>
-
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href'))
+          .scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+    </script>
     
 
 </body>
