@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="sec3.css"/>
     <link rel="stylesheet" href="sec4.css"/>
     <link rel="stylesheet" href="sec5.css"/>
+    <link rel="stylesheet" href="script.js"/>
 </head>
 <body>
     <nav class="navbar">
@@ -212,41 +213,112 @@
         <span>Browse My Recent</span>
         <h1>Projects</h1>
     </div>
+ <!-- Project box 1  -->
+  <div class="sec-4-2">
 
-    <div class="sec-4-2">
-        <div class="box3">
-            <img src="qr.png" alt="">
-            <h3> Generating QR</h3>
-            <div class="project-btns">
-                <a href="https://chsrunik.github.io/-Generating-QR/"><button class="btn-outline">GitHub</button></a>
-                <a href="qr vi.mp4" target="_blank"><button class="btn-dark">Live Demo</button></a>
-            </div>
+    <div class="box3">
+        <img src="qr.png" alt="">
+        <h3>Generating QR</h3>
+
+        <div class="project-btns">
+            <a href="https://chsrunik.github.io/-Generating-QR/"><button class="btn-outline">GitHub</button></a>
+            <a href="qr vi.mp4" target="_blank"><button class="btn-dark">Live Demo</button></a>
+            <button class="info-btn" onclick="toggleInfo(this)">Info</button>
         </div>
-
-        <!-- Project 2 -->
-        <div class="box3">
-            <img src="game.png" alt="">
-            <h3>Tic Tac Toe </h3>
-            <div class="project-btns">
-                <a href="https://chsrunik.github.io/Tic-Tac-Toe-Game/"><button class="btn-outline">GitHub</button></a>
-                <a href="#" target="_blank"><button class="btn-dark">Live Demo</button></a>
-            </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="box3">
-            <img src="project3.jpg" alt="">
-            <h3>Responsive Shopping</h3>
-            <div class="project-btns">
-                <a href="#"><button class="btn-outline">GitHub</button></a>
-                <a href="#" target="_blank"><button class="btn-dark">Live Demo</button></a>
-            </div>
+        <div class="project-info">
+            <p><strong>This is a QR Code Generator built using HTML, CSS & JavaScript.</strong></p>
+            <p><strong>👇🏻</strong></p>
+            <p><strong>How to Use It:</strong></p>
+            <ul>
+                <li> Open the Github link.</li>
+                <li>Type or paste any text or a website URL.</li>
+                <li>Click Generate QR.</li>
+                <li>The QR code appears below.</li>
+                <li> You can scan that code with any phone’s camera or a QR app and you can Download also.</li>
+            </ul>
         </div>
 
     </div>
 
+        <!-- Project 2 -->
+<div class="box3">
+    <img src="game.png" alt="">
+    <h3>Tic Tac Toe</h3>
+
+    <div class="project-btns">
+        <a href="https://chsrunik.github.io/Tic-Tac-Toe-Game/">
+            <button class="btn-outline">GitHub</button>
+        </a>
+        <a href="#" target="_blank">
+            <button class="btn-dark">Live Demo</button>
+        </a>
+        <button class="info-btn" onclick="toggleInfo(this)">Info</button>
+    </div>
+
+    <div class="project-info" style="display: none;">
+        <p><strong>This is a Tic Tac Toe game built using HTML, CSS & JavaScript.</strong></p>
+        <p><strong>👇🏻</strong></p>
+        <p><strong>How to Use It:</strong></p>
+        <ul>
+            <li>Open the GitHub link.</li>
+            <li>Create Username & password and Click the Register for the game .</li>
+            <li>Now click the login. & Enter the username & password.</li>
+            <li>Now Enter the Player 1 & 2 Names. Start the game.</li>
+            <li>Click any empty cell to start playing.</li>
+            <li>Player X and O take turns.</li>
+            <li>First to get 3 in a row wins.</li>
+            <li>Click Restart to play again.</li>
+        </ul>
+    </div>
+</div>
+
+      <!-- Project 3 -->
+<div class="box3">
+    <img src="pgg.png" alt="">
+    <h3>Password Generator</h3>
+
+    <div class="project-btns">
+        <a href="https://chsrunik.github.io/Password-generator/">
+            <button class="btn-outline">GitHub</button>
+        </a>
+        <a href="#" target="_blank">
+            <button class="btn-dark">Live Demo</button>
+        </a>
+        <button class="info-btn" onclick="toggleInfo(this)">Info</button>
+    </div>
+
+    <div class="project-info" style="display: none;">
+        <p><strong>This is a Password Generator built using HTML, CSS & JavaScript.</strong></p>
+        <p><strong>👇🏻</strong></p>
+        <p><strong>How to Use It:</strong></p>
+        <ul>
+            <li>Open the GitHub link.</li>
+            <li>Click Generate Password.</li>
+            <li>Copy the generated password.</li>
+            <li>Use it securely anywhere.</li>
+        </ul>
+    </div>
+</div>
+
+
+        
+
+        <div class="box3 hidden-project">Project 5</div>
+    <div class="box3 hidden-project">Project 6</div>
+    <div class="box3 hidden-project">Project 7</div>
+<div class="view-more-container">
+        <button id="viewMoreBtn">View More</button>
+    </div>
+
+</section>
+        
+    </div>
+
+    
+
 </section>
 
+ <!--contact-->
 <section id="contact" class="contact-section">
 
     <p class="sub-heading">Get in Touch</p>
@@ -287,6 +359,7 @@
     
 </footer>
 
+ <!--script-->
 <script src="script.js"></script>
 
 <script>
@@ -307,7 +380,38 @@ window.addEventListener('load', function () {
       });
     });
     </script>
-    
+</script>
+<script>
+const btn = document.getElementById("viewMoreBtn");
+const hiddenProjects = document.querySelectorAll(".hidden-project");
+
+btn.addEventListener("click", function(){
+
+    hiddenProjects.forEach(project => {
+        project.classList.toggle("show");
+    });
+
+    btn.innerText = btn.innerText === "View More"
+        ? "View Less"
+        : "View More";
+
+});
+</script>
+<script>
+        function toggleInfo(button){
+            const projectBox = button.closest(".box3");
+            const info = projectBox.querySelector(".project-info");
+        
+            if(info.style.display === "block"){
+                info.style.display = "none";
+                button.innerText = "Info";
+            }else{
+                info.style.display = "block";
+                button.innerText = "Close";
+            }
+        }
+        </script>
+
 
 </body>
 </html>
